@@ -1,0 +1,24 @@
+{
+  "name": "deco",
+  "version": "1.0.0",
+  "description": "DeCo a platfom where developers can learn and gain experience by working on different projects together.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhanraj-Patil/DeCo.git"
+  },
+  "author": "Dhanraj Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhanraj-Patil/DeCo/issues"
+  },
+  "homepage": "https://github.com/Dhanraj-Patil/DeCo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3-rc.0",
+    "socket.io": "^4.3.1"
+  }
+}

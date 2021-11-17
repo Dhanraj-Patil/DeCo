@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="login_container">
+        <!-- <form action="/user_login" class="login_form" method="post"> -->
+        <form class="login_form">
+            <div>
+                <label for="name" class="label">Name</label>
+                <input type="text" class=" input name" name="Username">
+            </div>
+            <div>
+                <label for="password" class="label">Password</label>
+                <input type="password" class=" input password" name="Password">
+            </div>
+            <input type="submit" class="login_submit">
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>

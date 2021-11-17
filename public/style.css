@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EBECFF;
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    height: max-content;
+}
+
+
+/* Login page */
+
+.login_container {
+    height: 100vh;
+    background-color: transparent;
+}
+
+.login_form {
+    height: 240px;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid #707070;
+    padding: 20px;
+    box-sizing: border-box;
+    /* text-align: center; */
+}
+
+.label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.input {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid #707070;
+    padding: 5px;
+    font-size: 1.1;
+}
+
+.login_submit {
+    width: 80px;
+    text-align: center;
+    margin: 0 113px;
+    position: relative;
+    background-color: #686DFF;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* Login page */
+
+
+/* index page */
+
+header {
+    position: relative;
+    top: 0%;
+}
+
+nav {
+    background-color: black;
+    /* line-height: max-content; */
+    height: 80px;
+    top: 0%;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    /* position: absolute; */
+    /* position: relative; */
+    width: 100%;
+    text-align: center;
+}
+
+nav ul {
+    display: inline;
+    list-style: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 26px;
+}
+
+nav ul li h3 {
+    cursor: pointer;
+}
+
+.logo {
+    float: left;
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    height: 100vh;
+}
+
+.new_project {
+    background-color: #F3F3F3;
+    height: 100px;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 100px;
+    padding: 0 200px;
+}
+
+.new_project button {
+    float: right;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    background-color: #686DFF;
+    border: none;
+    border-radius: 10px;
+    width: max-content;
+    padding: 7px 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+.new_project button:hover {
+    background-color: #4d53fc;
+}
