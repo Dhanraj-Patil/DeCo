@@ -9,20 +9,23 @@
 <body>
     <div class="login_container">
         <!-- <form action="/user_login" class="login_form" method="post"> -->
-        <form class="login_form">
+        <form action="" class="login_form">
             <div>
                 <label for="name" class="label">Name</label>
-                <input type="text" class=" input name" name="Username">
+                <input type="text" class=" input name" name="Username" required>
             </div>
             <div>
                 <label for="password" class="label">Password</label>
-                <input type="password" class=" input password" name="Password">
+                <input type="password" class=" input password" name="Password" required>
             </div>
-            <input type="submit" class="login_submit">
+            <div class="button_container">
+                <input type="submit" class="submit_button">
+            </div>
+            <div class="create_ac_route"><a href="/create_account/create_account.html">New User? Create Account</a></div>
         </form>
+
     </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="login.js"></script>
 </body>
 

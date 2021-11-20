@@ -1,18 +1,26 @@
-// const socket = io()
+var login_form = document.querySelector(".login_form")
+var username = document.querySelector(".name")
+var password = document.querySelector(".password")
 
-var login_form = document.querySelector(".login_submit")
-login_form.addEventListener('click', (event) => {
+login_form.addEventListener('submit', (event) => {
     event.preventDefault()
-    console.log("Hi")
-    var name = document.querySelector(".name")
-    var password = document.querySelector(".password")
-    socket.emit('login', { username: name.value, password: password.value })
+    console.log(username.value + "  " + password.value)
+    $.ajax({
+        url: "/user_login",
+        type: "GET",
+        data: {
+            Username: username.value,
+            Password: password.value
+        },
+        success: (data) => {
+            if (data.login) {
+                window.location = "/"
+            } else {
+                alert("Wrong Username or Password")
+            }
+        },
+        error: () => {
+            console.log("login failed")
+        }
+    })
 })
-
-
-// socket.on('login', (data) => {
-//     console.log("i was here")
-//     if (data.status == false) {
-//         alert(data.message)
-//     }
-// })

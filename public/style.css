@@ -23,7 +23,8 @@ body {
 }
 
 .login_form {
-    height: 240px;
+    /* height: 240px; */
+    height: auto;
     width: 350px;
     background-color: white;
     border-radius: 10px;
@@ -32,7 +33,9 @@ body {
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid #707070;
-    padding: 20px;
+    padding: 0 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     /* text-align: center; */
 }
@@ -51,27 +54,93 @@ body {
     box-sizing: border-box;
     height: 30px;
     border-radius: 10px;
-    border: 2px solid #707070;
+    border: 1px solid #707070;
     padding: 5px;
     font-size: 1.1;
+    font-weight: 500;
 }
 
-.login_submit {
+.submit_button {
     width: 80px;
     text-align: center;
-    margin: 0 113px;
+    /* margin: 0 113px; */
+    margin: auto;
     position: relative;
     background-color: #686DFF;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     height: 30px;
     font-size: 1.2em;
     font-weight: bold;
     color: white;
+    transition: ease 0.5s;
+}
+
+.button_container {
+    margin: auto;
+    width: max-content;
+}
+
+.submit_button:hover {
+    background-color: #4d53fc;
+}
+
+.create_ac_route {
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.9em;
+    width: fit-content;
+    position: relative;
+    padding-top: 8px;
+}
+
+.create_ac_route a {
+    color: #686DFF!important;
+    transition: ease 0.5s;
+}
+
+.create_ac_route a:hover {
+    color: #4d53fc!important;
 }
 
 
 /* Login page */
+
+
+/* Create Account */
+
+.create_account {
+    width: 500px;
+    border: #707070 2px solid;
+    background-color: white;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.login_ac_route {
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.9em;
+    width: fit-content;
+    position: relative;
+    padding-top: 8px;
+}
+
+.login_ac_route a {
+    color: #686DFF!important;
+    transition: ease 0.5s;
+}
+
+.login_ac_route a:hover {
+    color: #4d53fc;
+}
+
+
+/* Creat Accoutn */
 
 
 /* index page */
@@ -133,14 +202,14 @@ nav ul li h3 {
     padding: 0 200px;
 }
 
-.new_project button {
+.add_project_button {
     float: right;
     top: 50%;
     transform: translateY(-50%);
     position: relative;
     background-color: #686DFF;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: max-content;
     padding: 7px 10px;
     font-size: 1.1em;
