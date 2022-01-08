@@ -150,7 +150,7 @@ header {
     top: 0%;
 }
 
-div.primary nav {
+nav {
     background-color: black;
     /* line-height: max-content; */
     height: 80px;
@@ -163,18 +163,18 @@ div.primary nav {
     width: 100%;
     text-align: center;
 }
-div.primary nav ul {
+nav ul {
     display: inline;
     list-style: none;
     float: right;
 }
 
-div.primary nav ul li {
+nav ul li {
     display: inline-block;
     padding: 26px;
 }
 
-div.primary nav ul li h3 {
+nav ul li h3 {
     cursor: pointer;
 }
 
@@ -329,11 +329,6 @@ div.secondary nav ul li h4 {
 } */
 
 .row{
-    text-align: center;
-    font-weight: bold;
-}
-
-.vid{
     text-align: center;
     font-weight: bold;
 }
