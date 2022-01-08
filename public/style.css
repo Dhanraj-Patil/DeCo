@@ -150,7 +150,7 @@ header {
     top: 0%;
 }
 
-nav {
+div.primary nav {
     background-color: black;
     /* line-height: max-content; */
     height: 80px;
@@ -163,19 +163,18 @@ nav {
     width: 100%;
     text-align: center;
 }
-
-nav ul {
+div.primary nav ul {
     display: inline;
     list-style: none;
     float: right;
 }
 
-nav ul li {
+div.primary nav ul li {
     display: inline-block;
     padding: 26px;
 }
 
-nav ul li h3 {
+div.primary nav ul li h3 {
     cursor: pointer;
 }
 
@@ -258,8 +257,6 @@ nav ul li h3 {
 
 /* projects */
 
-/* projects */
-
 .proj{ 
     padding-left: 45%;
     height: 100px;
@@ -280,6 +277,63 @@ nav ul li h3 {
 }
 .prjimg{
     padding: 25px;
-    /* margin: 25px; */
-    
+}
+
+/* projects */
+
+/* chat */
+
+div.secondary nav {
+    background-color: rgb(255, 255, 255);
+    /* line-height: max-content; */
+    height: 50px;
+    color: rgb(0, 0, 0);
+    /* position: absolute; */
+    /* position: relative; */
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid  black;
+    /* margin-bottom: 10px; */
+}
+div.secondary nav ul {
+    display: inline;
+    list-style: none;
+    float: right;
+}
+
+div.secondary nav ul li {
+    display: inline-block;
+    padding: 25px;
+    line-height: 0px;
+}
+
+div.secondary nav ul li h4 {
+    cursor: pointer;
+}
+
+/* #membr{
+    background-color: rgb(255, 255, 255);
+    top: 0%;
+    width: 25%;
+    height:82.5vh;
+    border-right: 2px solid black;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: x-large;
+}
+#chatdis{
+    background-color: #ffffff;
+    width: 50%;
+    margin-left: 25%;
+} */
+
+.row{
+    text-align: center;
+    font-weight: bold;
+}
+
+.vid{
+    text-align: center;
+    font-weight: bold;
 }
