@@ -54,7 +54,7 @@ body {
     box-sizing: border-box;
     height: 30px;
     border-radius: 10px;
-    border: 1px solid #707070;
+    border: 1px solid #8b0505;
     padding: 5px;
     font-size: 1.1;
     font-weight: 500;
@@ -82,7 +82,7 @@ body {
 }
 
 .submit_button:hover {
-    background-color: #4d53fc;
+    background-color: #0008ff;
 }
 
 .create_ac_route {
@@ -100,7 +100,7 @@ body {
 }
 
 .create_ac_route a:hover {
-    color: #4d53fc!important;
+    color: #0008ff!important;
 }
 
 
@@ -136,7 +136,7 @@ body {
 }
 
 .login_ac_route a:hover {
-    color: #4d53fc;
+    color: #0008ff;
 }
 
 
@@ -188,7 +188,7 @@ nav ul li h3 {
 .container {
     width: 60%;
     margin: auto;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     height: 100vh;
 }
 
@@ -221,5 +221,65 @@ nav ul li h3 {
 }
 
 .new_project button:hover {
-    background-color: #4d53fc;
+    background-color: #0008fa;
+}
+
+.join_project{
+    padding-left: 45%;
+    height: 100px;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 100px;
+    /* padding: 0 200px; */
+}
+/* index page */
+
+/* add project */
+
+.add_proj{
+    padding-left: 45%;
+    height: 100px;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+.add_proj_form {
+    padding-top: 5%;
+    padding-left: 11.5%;
+    width: 700px;
+    box-sizing: content-box;
+    margin-left: 0%;
+}
+
+/* add project */
+
+/* projects */
+
+/* projects */
+
+.proj{ 
+    padding-left: 45%;
+    height: 100px;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 100px;
+}
+.prjdisp{
+    background-color: #F3F3F3;
+    margin-top: 10%;
+    margin-left: 10%;
+    height: 150px;
+    width: 80%;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 100px;
+}
+.prjimg{
+    padding: 25px;
+    /* margin: 25px; */
+    
 }
