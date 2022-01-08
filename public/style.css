@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 * {
     text-decoration: none;
     margin: 0;
@@ -58,6 +58,18 @@ body {
     padding: 5px;
     font-size: 1.1;
     font-weight: 500;
+}
+
+.remember_password_container {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    /* font-size: 0.9em; */
+}
+
+.checkbox_label {
+    font-weight: 400!important;
 }
 
 .submit_button {
@@ -172,10 +184,12 @@ div.primary nav ul {
 div.primary nav ul li {
     display: inline-block;
     padding: 26px;
+    padding-left: 0;
 }
 
 div.primary nav ul li h3 {
     cursor: pointer;
+    color: white!important;
 }
 
 .logo {
@@ -223,7 +237,7 @@ div.primary nav ul li h3 {
     background-color: #0008fa;
 }
 
-.join_project{
+.join_project {
     padding-left: 45%;
     height: 100px;
     width: 100%;
@@ -232,11 +246,14 @@ div.primary nav ul li h3 {
     line-height: 100px;
     /* padding: 0 200px; */
 }
+
+
 /* index page */
+
 
 /* add project */
 
-.add_proj{
+.add_proj {
     padding-left: 45%;
     height: 100px;
     width: 100%;
@@ -253,11 +270,12 @@ div.primary nav ul li h3 {
     margin-left: 0%;
 }
 
+
 /* add project */
 
-/* projects */
 
-.proj{ 
+.proj {
+
     padding-left: 45%;
     height: 100px;
     width: 100%;
@@ -265,7 +283,8 @@ div.primary nav ul li h3 {
     font-weight: bold;
     line-height: 100px;
 }
-.prjdisp{
+
+.prjdisp {
     background-color: #F3F3F3;
     margin-top: 10%;
     margin-left: 10%;
@@ -275,7 +294,8 @@ div.primary nav ul li h3 {
     font-weight: bold;
     line-height: 100px;
 }
-.prjimg{
+
+.prjimg {
     padding: 25px;
 }
 
@@ -336,4 +356,6 @@ div.secondary nav ul li h4 {
 .vid{
     text-align: center;
     font-weight: bold;
+    /* margin: 25px; */
+ main
 }

@@ -2,14 +2,14 @@ const socket = io()
 
 username = ""
 
-socket.on('login', (data) => {
-    console.log("i was here")
-    if (data.status == false) {
-        alert(data.message)
-    } else {
-        console.log(data.message)
-    }
-})
+// socket.on('login', (data) => {
+//     console.log("i was here")
+//     if (data.status == false) {
+//         alert(data.message)
+//     } else {
+//         console.log(data.message)
+//     }
+// })
 
 var login_status = document.querySelector(".login_status")
 login_status.addEventListener('click', () => {
