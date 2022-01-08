@@ -28,8 +28,8 @@ app.use(express.static(path.join(__dirname + '/public')))
 
 var con = sql.createConnection({
     host: "localhost",
-    user: "TaDi",
-    password: "TURNIPE@RTh387",
+    user: "Dhanraj",
+    password: "djp111234",
     database: "DeCo",
     insecureAuth: true
 });
@@ -142,6 +142,20 @@ app.get('/home', (req, res) => {
     }
     res.end();
 })
+
+const isAuth = (req, res, next) => {
+    if (req.session.loggedin) {
+        next()
+    } else {
+        res.redirect("/login/login.html")
+    }
+}
+
+app.get('/projects', isAuth, (req, res) => {
+    res.redirect("/projects/projects.html")
+})
+
+app.post("/home")
 
 server.listen(port, () => {
     console.log(`Server running on port ${port}`)
