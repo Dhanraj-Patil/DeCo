@@ -143,6 +143,20 @@ app.get('/home', (req, res) => {
     res.end();
 })
 
+const isAuth = (req, res, next) => {
+    if (req.session.loggedin) {
+        next()
+    } else {
+        res.redirect("/login/login.html")
+    }
+}
+
+app.get('/projects', isAuth, (req, res) => {
+    res.redirect("/projects/projects.html")
+})
+
+app.post("/home")
+
 server.listen(port, () => {
     console.log(`Server running on port ${port}`)
 })
