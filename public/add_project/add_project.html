@@ -7,12 +7,11 @@
     </title>
     <link rel="stylesheet" href="/style.css">
     <style>
-        textarea 
-        {
+        textarea {
             font: size 1.2em;
             font-family: 'Poppins', sans-serif;
             padding-left: 5px;
-            width:100%;
+            width: 100%;
             border-color: #8b0505;
         }
     </style>
@@ -22,19 +21,19 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>DeCo</h1>
+                <h1 class="home_page">DeCo</h1>
             </div>
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="/projects/projects.html" style="color: white;">
-                        <h3 class="projects">Projects</h3>
+                        <a href="/projects" class="projects">
+                            <h3>Projects</h3>
                         </a>
                     </li>
                     <li>
-                        <a href="/index.html" style="color: white;">
+                        <!-- <a href="/index.html" style="color: white;"> -->
                         <h3 class="login_status">Login</h3>
-                        </a>
+                        <!-- </a> -->
                     </li>
                 </ul>
             </div>
@@ -48,28 +47,29 @@
             <form action="" class="add_proj_form">
                 <div>
                     <label for="title" class="label">Title:</label>
-                    <input type="text" class=" input title" name="Title" required>
+                    <input type="text" class=" input title new_project_form_input" name="Title" required>
                 </div>
                 <div>
                     <label for="description" class="label">Description:</label>
-                    <textarea style="border-radius: 10px!important;resize: none;" name="descrip" id="des" cols="93 " rows="8" required></textarea>
+                    <textarea class="description new_project_form_desc" name="description" required></textarea>
                     <!-- <input type="text" class=" input description" name="Description" required> -->
                 </div>
                 <div>
                     <label for="requirement" class="label">Requirement:</label>
-                    <input type="text" class="input requirement" name="Requirement" required>
+                    <input type="text" class="input requirement new_project_form_input" name="Requirement" required>
                 </div>
                 <div>
                     <label for="github" class="label">GitHub:</label>
-                    <input type="text" class="input github" name="GitHub" required>
+                    <input type="url" class="input github new_project_form_input" name="GitHub" required>
                 </div>
                 <div class="button_container">
-                    <input type="submit" class="submit_button" value="Add">
+                    <input type="submit" class="add_project_button add_project_form" value="Add">
                 </div>
             </form>
         </div>
     </div>
-    <script src="add_project.js"></script>   
+    <script src="add_project.js"></script>
+    <script src="/index.js"></script>
 </body>
 
 </html>

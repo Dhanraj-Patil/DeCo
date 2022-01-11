@@ -10,8 +10,10 @@ const sql = require('mysql2')
 
 const session = require('express-session')
 var bodyParser = require('body-parser');
+const res = require('express/lib/response')
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
+
 
 
 app.use(session({
@@ -20,9 +22,9 @@ app.use(session({
     saveUninitialized: true
 }))
 
-
-
 app.use(express.static(path.join(__dirname + '/public')))
+
+
 
 // sql config
 
@@ -37,6 +39,7 @@ con.connect((err) => {
     if (err) throw err;
     console.log("connected to my sql")
 })
+
 
 // socket.io config 
 
@@ -91,6 +94,10 @@ io.on('connection', socket => {
 
 })
 
+app.get('/', (req, res) => {
+    res.sendFile("index.html")
+})
+
 app.get('/user_login', (req, res) => {
     let username = req.query.Username
     let password = req.query.Password
@@ -132,6 +139,13 @@ app.post('/create_account', (req, res) => {
     })
 })
 
+app.get('/logout', (req, res) => {
+    req.session.destroy(function(err) {
+        res.redirect('/')
+        if (err) throw err
+    })
+})
+
 
 app.get('/home', (req, res) => {
     if (req.session.loggedin) {
@@ -154,6 +168,39 @@ const isAuth = (req, res, next) => {
 app.get('/projects', isAuth, (req, res) => {
     res.redirect("/projects/projects.html")
 })
+
+
+
+app.post('/new-project-submit', (req, res) => {
+    var title = req.body.title
+    var description = req.body.description
+    var requirement = req.body.requirement
+    var github = req.body.github
+    var initiator = req.session.username
+
+    con.query(`SELECT PROJECT_NAME,GITHUB FROM PROJECT WHERE PROJECT_NAME=? OR GITHUB=?`, [title, github], (err, result, fields) => {
+        if (err) throw err
+        if (result[0] != undefined) {
+            res.json({ status: 'exist' })
+        } else {
+            con.query(`INSERT INTO PROJECT VALUES(?,?,?,?,?)`, [title, initiator, github, description, requirement], (err, results, fields) => {
+                if (err) throw err
+                console.log(results)
+                res.json({ status: 'success' })
+                req.session.project = title;
+                // res.redirect(path.join('/project:' + req.session.project))
+            })
+        }
+    })
+})
+
+
+app.post('/project_details', (req, res) => {
+    console.log(req.body.project)
+    res.redirect('/project_details/project_details.html')
+})
+
+
 
 server.listen(port, () => {
     console.log(`Server running on port ${port}`)
