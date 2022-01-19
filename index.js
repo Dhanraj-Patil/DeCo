@@ -169,7 +169,7 @@ app.get('/projects', isAuth, (req, res) => {
     res.redirect("/projects/projects.html")
 })
 
-
+// var projectName = ''
 
 app.post('/new-project-submit', (req, res) => {
     var title = req.body.title
@@ -186,18 +186,33 @@ app.post('/new-project-submit', (req, res) => {
             con.query(`INSERT INTO PROJECT VALUES(?,?,?,?,?)`, [title, initiator, github, description, requirement], (err, results, fields) => {
                 if (err) throw err
                 console.log(results)
-                res.json({ status: 'success' })
+                    // res.json({ status: 'success' })
                 req.session.project = title;
-                // res.redirect(path.join('/project:' + req.session.project))
+                // projectName = title
+                res.redirect('/project_details/' + req.session.project)
             })
         }
+    })
+    app.get(title, (request, response) => {
+        console.log(request)
+            // res.redirect('/project_details/project_details.html')
     })
 })
 
 
-app.post('/project_details', (req, res) => {
-    console.log(req.body.project)
-    res.redirect('/project_details/project_details.html')
+
+app.get('/project', (req, res) => {
+    con.query(`SELECT * FROM PROJECT`, (err, result, fields) => {
+        if (err) throw err
+        console.log('inside project\n')
+        res.json(result)
+    })
+})
+
+
+app.get('/project_details/:project', (req, res) => {
+    var projectName = req.params.project
+    console.log(projectName)
 })
 
 

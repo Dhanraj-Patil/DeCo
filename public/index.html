@@ -28,17 +28,77 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <div class="new_project">
-            <span>Need help doing a Project?</span>
-            <a href="add_project/add_project.html">
+    <div class="container col-6">
+        <div class="new_project ">
+            <div class="add_project_container col-8">
+                <span>Need help doing a Project?</span>
+                <!-- <a href="add_project/add_project.html" class="add_project_link col-4"> -->
+                <span class="col-4 add_project_link">
+                <a href="add_project/add_project.html">
                 <button class="add_project_button">New Project</button>
-            </a>
+                </a>
+                </span>
+            </div>
+            <!-- </a> -->
         </div>
         <div class="join_project"></div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>
+    <script>
+        var join_project = document.querySelector(".join_project")
+        window.addEventListener("load", () => {
+            fetch('/project', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(res => res.json())
+                .then(data => {
+                    data.forEach(element => {
+                        console.log(element)
+                        var data_template = document.createElement('div')
+                        data_template.classList = "project_container"
+                        var data_template_container = document.createElement('div')
+                        data_template_container.classList = 'project_data_container col-10'
+                        data_template.appendChild(data_template_container)
+                        var data_template_title = document.createElement('div')
+                        data_template_title.classList = 'template-title'
+                        data_template_title.innerHTML = 'Title: ' + element.PROJECT_NAME
+                        var data_template_description_container = document.createElement('div')
+                        data_template_description_container.classList = 'template-description-header'
+                        var data_template_description = document.createElement('div')
+                        data_template_description.classList = 'template-description'
+                        data_template_description.innerHTML = 'Description: ' + element.DESCRIPTION
+                        data_template_description_container.appendChild(data_template_description)
+                        var data_template_requirement_container = document.createElement('div')
+                        data_template_requirement_container.classList = 'template-requirement-header'
+                        var data_template_requirement = document.createElement('div')
+                        data_template_requirement.classList = 'template-requirement'
+                        data_template_requirement.innerHTML = 'Requirement: ' + element.REQUIREMENT
+                        data_template_requirement_container.appendChild(data_template_requirement)
+                        data_template_container.appendChild(data_template_title)
+                        data_template_container.appendChild(data_template_description_container)
+                        data_template_container.appendChild(data_template_requirement)
+
+                        // fetch('templatediv.html')
+                        //     .then(res => res.text())
+                        //     .then((text) => {
+                        //         // text.querySelector('template-title').innerHTML = data.PROJECT_NAME
+                        //         temp.innerHTML = text
+                        //     })
+                        //     .catch(err => {
+                        //         console.log(err)
+                        //     })
+                        join_project.appendChild(data_template)
+                    });
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        })
+    </script>
 </body>
 
 </html>

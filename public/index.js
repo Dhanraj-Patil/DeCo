@@ -68,8 +68,10 @@ add_project.addEventListener('click', (event) => {
                 console.log(res)
                 if (res.status == 'exist') {
                     alert("Title or Github used for another project")
-                } else {
-                    window.location = '/project_details?project=' + title.value
+                        // } else {
+                        //     window.location = '/project_detailst/?project=' + title.value
+                        //     console.log(window.location)
+                        // }
                 }
             })
             .catch((error) => {
