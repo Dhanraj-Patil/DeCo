@@ -46,6 +46,14 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>
     <script>
+        var project_tile = (title) => {
+            // event.preventDefault()
+            // var title = document.querySelector(".template-title")
+            console.log("tile clicked " + title)
+
+            window.location = "/project_details/" + title
+        }
+
         var join_project = document.querySelector(".join_project")
         window.addEventListener("load", () => {
             fetch('/project', {
@@ -62,6 +70,7 @@
                         data_template.classList = "project_container"
                         var data_template_container = document.createElement('div')
                         data_template_container.classList = 'project_data_container col-10'
+                        data_template_container.setAttribute('onClick', `project_tile('${element.PROJECT_NAME}')`)
                         data_template.appendChild(data_template_container)
                         var data_template_title = document.createElement('div')
                         data_template_title.classList = 'template-title'

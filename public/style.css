@@ -310,20 +310,20 @@ nav ul li h3 {
     width: 100%;
     /* height: 100px; */
     /* line-height: 10px; */
-    margin: 0 0 20px 0;
+    margin: 10px 0;
     box-sizing: border-box;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.project_container:hover {
-    /* background-color: #f0f0f7; */
+.project_data_container:hover {
+    background-color: #f8f8fa;
     color: #686DFF;
 }
 
 .project_data_container {
+    transition: 0.3s ease;
     margin: auto;
-    /* height: 200px; */
     padding: 10px;
     height: 200px;
     /* border-style: groove; */
@@ -499,4 +499,37 @@ div.secondary nav ul li h4 {
     text-align: center;
     font-weight: bold;
     /* margin: 25px; */
+}
+
+
+/* #project details page */
+
+.project-detail-container {
+    padding: 40px 30px
+}
+
+.project-title {
+    padding: 60px 0;
+}
+
+.project-description,
+.project-initiator,
+.project-requirement,
+.project-memberes,
+.project-github,
+.project-website {
+    padding: 10px 0;
+}
+
+.user-project-display-elements {
+    padding: 10px;
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+}
+
+.user-project-display-textarea {
+    height: 200px;
+    resize: none;
+    overflow: auto;
 }

@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 
+app.set('views', './public/views')
+app.set('view engine', 'ejs')
+
 
 app.use(session({
     secret: 'secret',
@@ -186,10 +189,10 @@ app.post('/new-project-submit', (req, res) => {
             con.query(`INSERT INTO PROJECT VALUES(?,?,?,?,?)`, [title, initiator, github, description, requirement], (err, results, fields) => {
                 if (err) throw err
                 console.log(results)
-                    // res.json({ status: 'success' })
-                req.session.project = title;
-                // projectName = title
-                res.redirect('/project_details/' + req.session.project)
+                res.json({ status: 'success' })
+                    // req.session.project = title;
+                    // projectName = title
+                    // res.redirect('/project_details/' + req.session.project)
             })
         }
     })
@@ -209,13 +212,54 @@ app.get('/project', (req, res) => {
     })
 })
 
+var projectDetails = (req, res, next) => {
+    res.sendFile('/project_details/project_details.html')
+    res.end()
+}
+
+var UserProjectSelection = function(projectName, callback) {
+    con.query(`SELECT * FROM PROJECT WHERE PROJECT_NAME=?`, projectName, (err, result, fileds) => {
+        if (err) throw err
+        return callback(null, result[0])
+    })
+}
+
 
 app.get('/project_details/:project', (req, res) => {
     var projectName = req.params.project
-    console.log(projectName)
+    UserProjectSelection(projectName, (err, result) => {
+        if (err) throw err
+        console.log(result.PROJECT_NAME)
+        res.render('project_details', {
+                title: result.PROJECT_NAME,
+                description: result.DESCRIPTION,
+                requirement: result.REQUIREMENT,
+                initiator: result.INITIATOR,
+                github: result.GITHUB,
+                website: result.WEBSITE
+            })
+            // res.sendFile(path.join(__dirname + "/public/views/project_details.ejs"))
+    })
 })
 
-
+app.get('/:user/:project', (req, res) => {
+    var projectName = req.params.project
+    if (req.params.user == req.session.username) {
+        UserProjectSelection(projectName, (err, result) => {
+            if (err) throw err
+            console.log(result.PROJECT_NAME)
+            res.render('user-project-details', {
+                    title: result.PROJECT_NAME,
+                    description: result.DESCRIPTION,
+                    requirement: result.REQUIREMENT,
+                    initiator: result.INITIATOR,
+                    github: result.GITHUB,
+                    website: result.WEBSITE
+                })
+                // res.sendFile(path.join(__dirname + "/public/views/project_details.ejs"))
+        })
+    }
+})
 
 server.listen(port, () => {
     console.log(`Server running on port ${port}`)

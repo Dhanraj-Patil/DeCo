@@ -40,47 +40,47 @@ window.addEventListener("load", () => {
 })
 
 var add_project = document.querySelector(".add_project_form")
-add_project.addEventListener('click', (event) => {
-    event.preventDefault()
-    var title = document.querySelector('.title')
-    var description = document.querySelector('.description')
-    var requirement = document.querySelector('.requirement')
-    var github = document.querySelector('.github')
+    // add_project.addEventListener('click', (event) => {
+    //     event.preventDefault()
+    //     var title = document.querySelector('.title')
+    //     var description = document.querySelector('.description')
+    //     var requirement = document.querySelector('.requirement')
+    //     var github = document.querySelector('.github')
 
-    var data = {
-        title: title.value,
-        description: description.value,
-        requirement: requirement.value,
-        github: github.value
-    }
+//     var data = {
+//         title: title.value,
+//         description: description.value,
+//         requirement: requirement.value,
+//         github: github.value
+//     }
 
-    if (title.value && description.value && requirement.value && github.value) {
+//     if (title.value && description.value && requirement.value && github.value) {
 
-        fetch('/new-project-submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
-                if (res.status == 'exist') {
-                    alert("Title or Github used for another project")
-                        // } else {
-                        //     window.location = '/project_detailst/?project=' + title.value
-                        //     console.log(window.location)
-                        // }
-                }
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    } else {
-        alert("One or more fields empty.")
-    }
-})
+//         fetch('/new-project-submit', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify(data)
+//             })
+//             .then(res => res.json())
+//             .then(res => {
+//                 console.log(res)
+//                 if (res.status == 'exist') {
+//                     alert("Title or Github used for another project")
+//                 } else {
+//                     window.location = '/project_details/' + title.value
+//                     console.log(window.location)
+//                 }
+//                 // }
+//             })
+//             .catch((error) => {
+//                 console.log(error)
+//             })
+//     } else {
+//         alert("One or more fields empty.")
+//     }
+// })
 
 // socket.on("create_account", (data) => {
 //     alert(data.message)
