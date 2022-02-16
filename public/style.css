@@ -211,6 +211,7 @@ header {
 }
 
 nav {
+    
     background-color: black;
     /* line-height: max-content; */
     height: 60px;
@@ -250,6 +251,7 @@ nav ul li h3 {
 }
 
 .container {
+
     /* width: 60%; */
     margin: auto;
     background-color: rgb(255, 255, 255);
@@ -258,6 +260,7 @@ nav ul li h3 {
 }
 
 .new_project {
+
     background-color: #F3F3F3;
     height: 100px;
     /* width: 100%; */
@@ -269,6 +272,7 @@ nav ul li h3 {
 }
 
 .add_project_button {
+    box-shadow: 1px 1px 10px rgb(15, 26, 172);
     float: right;
     top: 50%;
     transform: translateY(-50%);
@@ -287,6 +291,7 @@ nav ul li h3 {
 }
 
 .add_project_container {
+    
     height: 100px;
     margin: auto;
 }
@@ -307,6 +312,7 @@ nav ul li h3 {
 }
 
 .project_container {
+    
     width: 100%;
     /* height: 100px; */
     /* line-height: 10px; */
@@ -444,6 +450,7 @@ nav ul li h3 {
 /* chat */
 
 div.secondary nav {
+    box-shadow: 1px 1px 10px rgb(22, 22, 22);
     background-color: rgb(255, 255, 255);
     /* line-height: max-content; */
     height: 50px;
@@ -491,11 +498,14 @@ div.secondary nav ul li h4 {
 } */
 
 .row {
+    box-shadow: 1px 1px 10px rgb(22, 22, 22);
     text-align: center;
     font-weight: bold;
+
 }
 
 .vid {
+    box-shadow: 1px 1px 10px rgb(22, 22, 22);
     text-align: center;
     font-weight: bold;
     /* margin: 25px; */
@@ -517,7 +527,8 @@ div.secondary nav ul li h4 {
 .project-requirement,
 .project-memberes,
 .project-github,
-.project-website {
+.project-website,
+.detail-tab {
     padding: 10px 0;
 }
 
@@ -533,3 +544,75 @@ div.secondary nav ul li h4 {
     resize: none;
     overflow: auto;
 }
+
+/* user */
+.user{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 100px;
+    margin: auto;
+}
+/* user */
+
+/* User Details */
+
+.user_data_container{
+margin: auto;
+}
+
+.user_heading{
+    padding-top: 50px;
+    height: 250px;
+}
+
+.pic-container{
+    box-shadow: 1px 1px 20px rgb(31, 31, 31);
+    /* margin-left: 100px;
+    margin-top: 100px;
+    margin-right: -55px; */
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .pic{
+    float: left;
+    margin-left: 0px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .usrname{
+      position: relative;
+      height: 200px;
+      width: 100%;
+      text-align: center;
+    font-weight: bold;
+    line-height: 150px;
+    margin: auto;
+  }
+.usrname div{
+    line-height: 200px;
+}
+  .usrdetails{
+      position: relative;
+      height: auto;
+      padding-top: 30px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 50px;
+    margin: auto;
+}
+
+/* User Details */
