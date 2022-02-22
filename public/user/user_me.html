@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        User Details
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1 class="home_page">DeCo</h1>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="/projects" class="projects">
+                            <h3>Projects</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- <a href="/index.html" style="color: white;"> -->
+                        <h3 class="login_status">Login</h3>
+                        <!-- </a> -->
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container col-6">
+        <div class="col-11 user_data_container">
+            <div class="user_heading">
+                <div class="pic-container">
+                    <img class="pic" src="https://images.unsplash.com/photo-1611003228941-98852ba62227?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+                </div>
+                <div class="usrname">
+                    <div>
+                        <h1>JS Name Here</h1>
+                    </div> 
+                </div>
+            </div>
+            
+            <div class="usrdetails">
+                <form action="">
+                    <div class="detail-tab">
+                        <label>Email : </label>
+                        <input class="user-project-display-elements" type="url" name="Name" id="" value="<%=initiator%>" disabled>
+                    </div>
+                    <div class="detail-tab">
+                        <label>GitHub : </label>
+                        <input class="user-project-display-elements" type="url" name="Github" id="" value="<%=github%>" disabled></div>
+                    <div class="detail-tab"><label>Description : </label> 
+                        <textarea class="user-project-display-elements user-project-display-textarea" type="text" name="description" id="" value="" disabled><%=description%></textarea>
+                    </div>
+                    <div class="detail-tab">
+                        <label>Experience : </label>
+                        <textarea class="user-project-display-elements user-project-display-textarea" type="text" name="Experience" id="" value="" disabled><%=description%></textarea>
+                    </div>
+                    <div class="detail-tab">
+                        <label>Education : </label>
+                        <textarea class="user-project-display-elements user-project-display-textarea" type="text" name="education" id="" value="" disabled><%=description%></textarea>
+                    </div>
+                    <div class="detail-tab">
+                        <label>Achievements : </label>
+                        <textarea class="user-project-display-elements user-project-display-textarea" type="text" name="achievements" id="" value="" disabled><%=description%></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="button_container">
+                <input type="button" class="add_project_button add_project_form" value="Edit">
+            </div>
+        </div>
+        
+    </div>
+    <script src="/index.js"></script>
+</body>
+
+</html>
