@@ -231,14 +231,13 @@ app.get('/project_details/:project', (req, res) => {
         if (err) throw err
         console.log(result.PROJECT_NAME)
         res.render('project_details', {
-                title: result.PROJECT_NAME,
-                description: result.DESCRIPTION,
-                requirement: result.REQUIREMENT,
-                initiator: result.INITIATOR,
-                github: result.GITHUB,
-                website: result.WEBSITE
-            })
-            // res.sendFile(path.join(__dirname + "/public/views/project_details.ejs"))
+            title: result.PROJECT_NAME,
+            description: result.DESCRIPTION,
+            requirement: result.REQUIREMENT,
+            initiator: result.INITIATOR,
+            github: result.GITHUB,
+            website: result.WEBSITE
+        })
     })
 })
 
