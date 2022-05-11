@@ -102,8 +102,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/user_login', (req, res) => {
-    let username = req.query.Username
-    let password = req.query.Password
+    let username = req.query.Username;
+    let password = req.query.Password;
     console.log(username + " " + password)
     con.query(`SELECT * FROM USERS WHERE USERNAME=? AND PASSWORD=?`, [username, password], (err, result, fields) => {
         if (err) throw err;
